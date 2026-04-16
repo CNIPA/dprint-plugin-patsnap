@@ -1,0 +1,8 @@
+{
+  "patsnap": {},
+  "includes": ["**/*.patsnap"],
+  "excludes": ["target"],
+  "plugins": [
+    "target/wasm32-unknown-unknown/release/dprint_plugin_patsnap.wasm"
+  ]
+}

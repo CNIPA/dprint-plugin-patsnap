@@ -1,0 +1,8 @@
+-- /file.patsnap --
+~~ fieldCase: preserve ~~
+== should preserve original field case ==
+TTL:test and abst:TEST
+
+[expect]
+    TTL:test
+and abst:TEST

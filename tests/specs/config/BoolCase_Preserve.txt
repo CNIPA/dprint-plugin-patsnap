@@ -1,0 +1,9 @@
+-- /file.patsnap --
+~~ booleanOperatorCase: preserve ~~
+== should preserve original operator case ==
+TTL:a AND ABST:b Or AN:c
+
+[expect]
+    ttl:a
+AND abst:b
+ Or an:c

@@ -1,0 +1,61 @@
+-- /file.patsnap --
+== should format a simple keyword ==
+汽车
+
+[expect]
+汽车
+
+== should format a field with simple value ==
+TTL:汽车
+
+[expect]
+ttl:汽车
+
+== should format a field with quoted value ==
+TTL:"air condition"
+
+[expect]
+ttl:"air condition"
+
+== should format a parenthesized field body ==
+TTL:(空调 or 蒸发器)
+
+[expect]
+ttl:(空调 or 蒸发器)
+
+== should format a range expression ==
+APD:[20200101 TO 20241231]
+
+[expect]
+apd:[20200101 TO 20241231]
+
+== should format proximity operator ==
+data $W2 line
+
+[expect]
+data $W2 line
+
+== should format frequency operator ==
+TTL:(汽车 $FREQ2)
+
+[expect]
+ttl:(汽车 $FREQ2)
+
+== should format TREE@ expression ==
+ANCS:(TREE@"拜耳股份公司")
+
+[expect]
+ancs:(TREE@"拜耳股份公司")
+
+== should format wildcard keywords ==
+TTL:m#tor*
+
+[expect]
+ttl:m#tor*
+
+== should format GAND operator ==
+EPDS:DE GAND EPDS_SLS:1
+
+[expect]
+     epds:DE
+gand epds_sls:1

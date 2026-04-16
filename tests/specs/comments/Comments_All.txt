@@ -1,0 +1,38 @@
+-- /file.patsnap --
+== should preserve standalone comment ==
+# this is a comment
+TTL:test
+
+[expect]
+# this is a comment
+ttl:test
+
+== should preserve blank line between queries ==
+TTL:a
+
+TTL:b
+
+[expect]
+ttl:a
+
+ttl:b
+
+== should preserve multiple comments ==
+# first comment
+# second comment
+TTL:test
+
+[expect]
+# first comment
+# second comment
+ttl:test
+
+== should handle comment between queries ==
+TTL:a
+# separator
+TTL:b
+
+[expect]
+ttl:a
+# separator
+ttl:b

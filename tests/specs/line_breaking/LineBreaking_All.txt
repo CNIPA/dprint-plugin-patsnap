@@ -1,0 +1,33 @@
+-- /file.patsnap --
+== should keep short inner OR on single line ==
+ttl:(空调 or 蒸发器)
+
+[expect]
+ttl:(空调 or 蒸发器)
+
+== should keep short inner AND on single line ==
+ttl:(空调 and 蒸发器)
+
+[expect]
+ttl:(空调 and 蒸发器)
+
+== should keep nested group on single line ==
+tac:(空调 and (蒸发器 or evaporator))
+
+[expect]
+tac:(空调 and (蒸发器 or evaporator))
+
+== should always break top-level even for short queries ==
+TTL:a and ABST:b
+
+[expect]
+    ttl:a
+and abst:b
+
+== should format idempotently ==
+    ttl:空调
+and abst:蒸发器
+
+[expect]
+    ttl:空调
+and abst:蒸发器

@@ -1,0 +1,9 @@
+-- /file.patsnap --
+~~ booleanOperatorCase: uppercase ~~
+== should uppercase boolean operators ==
+TTL:a and ABST:b or AN:c
+
+[expect]
+    ttl:a
+AND abst:b
+ OR an:c

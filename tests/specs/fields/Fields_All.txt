@@ -1,0 +1,48 @@
+-- /file.patsnap --
+== should lowercase TTL field ==
+TTL:test
+
+[expect]
+ttl:test
+
+== should lowercase ABST field ==
+ABST:test
+
+[expect]
+abst:test
+
+== should lowercase AN field ==
+AN:test
+
+[expect]
+an:test
+
+== should lowercase APD date field ==
+APD:[20200101 TO 20241231]
+
+[expect]
+apd:[20200101 TO 20241231]
+
+== should lowercase IPC field ==
+IPC:H01L21/00
+
+[expect]
+ipc:H01L21/00
+
+== should lowercase CCF_ prefixed field ==
+CCF_TTL:test
+
+[expect]
+ccf_ttl:test
+
+== should lowercase ANCS field with TREE@ ==
+ANCS:(TREE@"拜耳股份公司")
+
+[expect]
+ancs:(TREE@"拜耳股份公司")
+
+== should handle field with proximity in body ==
+TTL:(data $W2 line)
+
+[expect]
+ttl:(data $W2 line)

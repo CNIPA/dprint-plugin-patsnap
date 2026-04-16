@@ -1,0 +1,16 @@
+-- /file.patsnap --
+~~ operatorPosition: after ~~
+== should place operator at start of line (after is ignored) ==
+TTL:空调 and ABST:蒸发器
+
+[expect]
+    ttl:空调
+and abst:蒸发器
+
+== should place operator at start for three parts ==
+TTL:a and ABST:b or AN:c
+
+[expect]
+    ttl:a
+and abst:b
+ or an:c

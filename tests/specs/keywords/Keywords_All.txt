@@ -1,0 +1,24 @@
+-- /file.patsnap --
+== should preserve CJK keywords ==
+太阳能电池
+
+[expect]
+太阳能电池
+
+== should preserve wildcards ==
+m#tor*
+
+[expect]
+m#tor*
+
+== should preserve special characters ==
+85℃
+
+[expect]
+85℃
+
+== should preserve mixed CJK and ASCII ==
+LED照明
+
+[expect]
+LED照明

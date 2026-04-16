@@ -1,0 +1,7 @@
+-- /file.patsnap --
+~~ quoteStyle: single ~~
+== should convert to single quotes ==
+TTL:"air condition"
+
+[expect]
+ttl:'air condition'

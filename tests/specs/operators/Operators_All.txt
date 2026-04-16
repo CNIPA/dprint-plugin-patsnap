@@ -1,0 +1,60 @@
+-- /file.patsnap --
+== should break top-level AND to new lines ==
+TTL:空调 and ABST:蒸发器
+
+[expect]
+    ttl:空调
+and abst:蒸发器
+
+== should break top-level OR to new lines ==
+TTL:空调 or ABST:蒸发器
+
+[expect]
+   ttl:空调
+or abst:蒸发器
+
+== should break top-level NOT in chain ==
+TTL:a not ABST:b
+
+[expect]
+    ttl:a
+not abst:b
+
+== should flatten three-part chain ==
+TTL:a AND ABST:b OR AN:c
+
+[expect]
+    ttl:a
+and abst:b
+ or an:c
+
+== should break complex real-world query ==
+ttl:(空调 or "air condition" or 空气调节) and tac:(蒸发器 or evaporator)
+
+[expect]
+    ttl:(空调 or "air condition" or 空气调节)
+and tac:(蒸发器 or evaporator)
+
+== should break large chain with multiple operators ==
+TTL:a AND ABST:b AND IPC:c OR AN:d NOT CPC:e
+
+[expect]
+    ttl:a
+and abst:b
+and ipc:c
+ or an:d
+not cpc:e
+
+== should handle nested groups in field body ==
+tac:(空调 and (蒸发器 or evaporator))
+
+[expect]
+tac:(空调 and (蒸发器 or evaporator))
+
+== should handle multiline input as single query ==
+TTL:a
+and ABST:b
+
+[expect]
+    ttl:a
+and abst:b

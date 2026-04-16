@@ -1,0 +1,7 @@
+    ttl:(空调 or "air condition")
+and tac:(蒸发器 or evaporator)
+ or ipc:F25B
+
+    ancs:(TREE@"拜耳股份公司")
+and ipc:A61K
+and pbd:[20200101 TO 20231231]

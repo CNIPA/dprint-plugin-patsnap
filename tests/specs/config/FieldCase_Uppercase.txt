@@ -1,0 +1,8 @@
+-- /file.patsnap --
+~~ fieldCase: uppercase ~~
+== should uppercase field codes ==
+ttl:test and abst:test
+
+[expect]
+    TTL:test
+and ABST:test
